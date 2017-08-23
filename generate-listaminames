@@ -6,6 +6,8 @@
 # --- AMIs in use by your launch configs ------ #
 # --------------------------------------------- #
 
+## Save this file as an executable !!
+
 ## declare an array variable
 declare -a amids=(`aws autoscaling describe-launch-configurations | grep -i imageid | sort -u | sed s/\"//g | sed s/\,//g | sed s/"ImageId: "//g | sed s/"            "//g`)
 
@@ -19,3 +21,6 @@ do
 done
 
 chmod 0775 ./listaminames
+
+echo "listaminames created with executable permissions"
+echo "Now you can run ./listaminames"
