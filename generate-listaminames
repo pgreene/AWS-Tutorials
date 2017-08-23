@@ -1,0 +1,21 @@
+# --------------------------------------------- #
+# --- Name: generate-listaminames ------------- #
+# --- Author: pgreene ------------------------- #
+# --- Purpose: Generate script, listaminames -- #
+# --- Run listaminames to see all your AWS ---- #
+# --- AMIs in use by your launch configs ------ #
+# --------------------------------------------- #
+
+## declare an array variable
+declare -a amids=(`aws autoscaling describe-launch-configurations | grep -i imageid | sort -u | sed s/\"//g | sed s/\,//g | sed s/"ImageId: "//g | sed s/"            "//g`)
+
+## Will remove previous listaminames if it exists so you can run this generate script over and over
+rm listaminames
+
+## now loop through the above array
+for i in "${amids[@]}"
+do
+   echo -e "echo \"$i\" \naws ec2 describe-images --image-id $i | grep -i name | awk 'FNR == 1 {print}' " >> listaminames
+done
+
+chmod 0775 ./listaminames
