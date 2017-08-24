@@ -16,3 +16,5 @@ If you prefer YAML over JSON you can [convert JSON to YAML](https://www.json2yam
 <li><b>generate-listaminames</b> : Generate a script that lists all AMI Names used in all your AWS launch configurations</li>
 <li><b>generate-listattachedrolepolicies</b> : Generate a script that lists all Attached Policies on your existing AWS IAM Roles</li>
 </ul>
+
+<i>Shell scripts tested and working on OSX Sierra 10.12.6</i>
