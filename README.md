@@ -1,9 +1,7 @@
 AWS-Tutorials
 =============
 
-HowTo for AWS
-
-WIKI: https://github.com/pgreene/AWS-Tutorials/wiki
+[HowTo for AWS](https://github.com/pgreene/AWS-Tutorials/wiki)
 
 ## Helpful AWS Files and Templates
 <ul>
