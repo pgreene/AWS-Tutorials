@@ -8,6 +8,6 @@
 ### Usage
 
 ```bash
-packer validate ami.json
-packer build ami.json
+packer validate bastion.json
+packer build bastion.json
 ```
