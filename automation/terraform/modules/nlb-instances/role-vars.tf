@@ -10,5 +10,5 @@ variable "role_resource" {
 }
 
 //variable "iam_instance_profile" {
-//  default = "${var.company_env}-${var.app_name}-${var.company_region}-role"
+//  default = "${var.tr_env}-${var.project_name}-${var.tr_region}-role"
 //}

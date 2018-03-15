@@ -1,19 +1,19 @@
 // Provider variables
 variable "aws_region" {
-  description = "aws region, example: us-east-1 (not Company region)"
+  description = "aws region, example: us-east-1 (not Project region)"
   default     = ""
 }
 
-// Company specific variables
+// Project specific variables
 // -----------------------------------------------------
-variable "company_env" {
-  description = "Company Environments; int, test, stage, auto, uat, demo, prod"
+variable "pr_env" {
+  description = "Project Environments; dev, stage, uat, prod"
   type        = "string"
   default     = ""
 }
 
-variable "company_region" {
-  description = "Company Regions, not to be confused with AWS Regions... if your company is international and have deployments in multiple AWS regions"
+variable "pr_region" {
+  description = "Project Regions, not to be confused with AWS Regions; US, CA & UK"
   type        = "string"
   default     = ""
 }
@@ -24,8 +24,8 @@ variable "automation" {
   default     = "terraform"
 }
 
-variable "app_name" {
-  description = "Gateway, INS, etc"
+variable "project_name" {
+  description = "bastion setup"
   type        = "string"
   default     = "BASTION"
 }
@@ -46,12 +46,12 @@ variable "tag" {
 
 variable "aws_account_id" {
   description = "AWS account ID."
-  default     = "12-digit-number-on-AWS-Account"
+  default     = "123456789123"
 }
 
 variable "ami_id" {
   type    = "string"
-  default = "ami-d6349dac"
+  default = "ami-12345678"
 }
 
 variable "vpc_id" {
