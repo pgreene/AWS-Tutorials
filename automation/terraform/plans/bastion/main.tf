@@ -6,12 +6,12 @@ provider "aws" {
 // LOCAL VARIABLES
 // ------------------------------------------
 locals {
-  aws_account_id = "374725791127" // devops or prod account id
+  aws_account_id = "123456789123"
   project_name         = "BASTION"
   pr_env               = "PROD"
   pr_region            = "US"
   key_name             = "awssshkeypairname"
-  vpc_id               = "vpc-85a927e3"             // PROD us-east-1 region
+  vpc_id               = "vpc-12345678"
   iam_instance_profile = ""                         // keep empty
 }
 
