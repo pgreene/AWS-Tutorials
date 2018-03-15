@@ -10,8 +10,8 @@
 
 
 ## Set Up
-* Packer creates the initial AMI for terraform to user
+* Packer creates the initial AMI for terraform to use
 * Terraform picks up the instance based on tag name (see data.tf in nlb-instances module)
 * 2 bastion host instances are created in a target group behind a network load balancer
 * Cloudwatch Monitoring is set up on CPU and Network Throughput
-* Route53 subdomain name is generated 
+* Route53 subdomain name is generated
