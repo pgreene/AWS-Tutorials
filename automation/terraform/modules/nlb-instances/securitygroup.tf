@@ -6,9 +6,9 @@ resource "aws_security_group" "main" {
 
   tags {
     Name                   = "${var.pr_env}-${var.project_name}-${var.pr_region}-SG"
-    "traderev:automation"  = "${var.automation}"
-    "traderev:environment" = "${var.pr_env}"
-    "traderev:region"      = "${var.pr_region}"
+    "automation"  = "${var.automation}"
+    "environment" = "${var.pr_env}"
+    "region"      = "${var.pr_region}"
   }
 }
 
