@@ -66,10 +66,6 @@ module "nlb-instances" {
   healthy_threshold     = "3"
   unhealthy_threshold   = "3"
 
-  //timeout = "5"
-  // ALB Listener Variable
-  // certificate_arn = "arn:aws:acm:us-east-1:082894742960:certificate/13cce013-4edc-4b7f-9248-c8d4d4bbf4ac"
-  // ------------------------------------------
 
   // LAUNCH CONFIG VARIABLES
   // ------------------------------------------
