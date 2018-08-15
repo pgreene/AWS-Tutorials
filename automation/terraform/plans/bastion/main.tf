@@ -7,8 +7,10 @@ provider "aws" {
 // KMS Key needs to be created in IAM
 // S3 Bucket needs to be created called state-files with versioning enabled
 // ------------------------------------------
-terraform {
-  required_version = "~> 0.10"
+
+// backend portion for state files is untested - not sure if the wrapper terraform block is necessary at this point
+//terraform {
+  //required_version = "~> 0.10"
 
   backend "s3" {
     bucket  = "state-files"
@@ -17,7 +19,7 @@ terraform {
     kms_key_id = "alias/terraform"
     encrypt = true
   }
-}
+//}
 
 // LOCAL VARIABLES
 // ------------------------------------------
