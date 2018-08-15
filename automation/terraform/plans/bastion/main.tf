@@ -3,6 +3,20 @@ provider "aws" {
   profile = "prod"
 }
 
+// Backend for State File
+// ------------------------------------------
+terraform {
+  required_version = "~> 0.10"
+
+  backend "s3" {
+    bucket  = "state-files"
+    key     = "development/vpc.tfstate"
+    region  = "us-east-1"
+    kms_key_id = "alias/terraform"
+    encrypt = true
+  }
+}
+
 // LOCAL VARIABLES
 // ------------------------------------------
 locals {
