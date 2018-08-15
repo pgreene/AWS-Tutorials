@@ -4,6 +4,8 @@ provider "aws" {
 }
 
 // Backend for State File
+// KMS Key needs to be created in IAM
+// S3 Bucket needs to be created called sate-files with versioning enabled
 // ------------------------------------------
 terraform {
   required_version = "~> 0.10"
