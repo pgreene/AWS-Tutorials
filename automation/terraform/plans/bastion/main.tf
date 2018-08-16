@@ -8,9 +8,8 @@ provider "aws" {
 // S3 Bucket needs to be created called state-files with versioning enabled
 // ------------------------------------------
 
-// backend portion for state files is untested - not sure if the wrapper terraform block is necessary at this point
-//terraform {
-  //required_version = "~> 0.10"
+terraform {
+  required_version = "~> 0.10"
 
   backend "s3" {
     bucket  = "state-files"
@@ -19,7 +18,7 @@ provider "aws" {
     kms_key_id = "alias/terraform"
     encrypt = true
   }
-//}
+}
 
 // LOCAL VARIABLES
 // ------------------------------------------
