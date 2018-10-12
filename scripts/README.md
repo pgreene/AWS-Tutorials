@@ -1,5 +1,5 @@
 ## Scripts
-More detailed notes on [Scripts Wiki Page](https://github.com/pgreene/AWS-Tutorials/wiki/Scripts)
+More detailed notes on [Scripts Wiki Page](https://github.com/pgreene/AWS-Tutorials/wiki/Scripts) <br/>
 Note that you can change AWS CLI output in various ways such as;
 
 ```bash
