@@ -6,9 +6,9 @@ import sys
 
 ses = boto3.client('ses')
 
-email_from = 'paul.greene@altusgroup.com'
-email_to = 'paul.greene@altusgroup.com'
-email_cc = 'paul.greene@altusgroup.com'
+email_from = 'anonymous@anonymous.com'
+email_to = 'anonymous@anonymous.com'
+email_cc = 'anonymous@anonymous.com'
 emaiL_subject = 'test lambda function'
 email_body = 'testing u can ignore'
 
