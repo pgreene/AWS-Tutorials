@@ -8,3 +8,21 @@ This terraform plan and module set ups:
 <a href="https://github.com/pgreene/AWS-Tutorials/tree/master/automation/terraform/modules/lambda-tagcheck">lambda-tagcheck module</a>
 
 This plan assumes you have an S3 bucket set up for your state files called; state-files
+
+<b>PLAN USAGE</b>
+
+Usage (when creating a new terraform workspace such as QA, UAT or PROD):
+```bash
+terraform init
+terraform workspace new qa
+terraform plan
+terraform apply
+```
+
+Usage (when selecting an existing terraform workspace such as QA, UAT or PROD):
+```bash
+terraform init
+terraform workspace select qa
+terraform plan
+terraform apply
+```
