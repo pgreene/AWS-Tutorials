@@ -8,6 +8,8 @@
 * S3 bucket for terraform state files is a pre-requisite
 * S3 bucket for SSM log files is also created outside this plan, ahead of time
 
+Module Used: <a href="https://github.com/pgreene/AWS-Tutorials/tree/master/automation/terraform/modules/ssm">SSM</a>
+
 ### Making Life Easy
 to run SSM patch baseline and maintenance window setup in QA:
 ```bash
