@@ -7,6 +7,7 @@
     * Module : ECS
 * S3 bucket for terraform state files is a pre-requisite
 * S3 bucket for SSM log files is also created outside this plan, ahead of time
+* EC2 hosts need to ensure that the roles attached are allowing SSM access, and that the trust relationship is allowing SSM
 
 Module Used: <a href="https://github.com/pgreene/AWS-Tutorials/tree/master/automation/terraform/modules/ssm">SSM</a>
 
