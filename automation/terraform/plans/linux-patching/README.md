@@ -1,7 +1,5 @@
 ## Plan Usage
 
-<b>Before Running Plan, check and change the following:</b>
-
 <b>IMPORTANT</b>
 * terraform workspace for this plan = $ENV
 * It is assumed your EC2 Instance(s) have these tags - key : values (for SSM patching target);
