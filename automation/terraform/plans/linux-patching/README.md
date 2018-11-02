@@ -1,16 +1,16 @@
 ## Plan Usage
 
 <b>Before Running Plan, check and change the following:</b>
-### Making Life Easy
 
 <b>IMPORTANT</b>
 * terraform workspace for this plan = $ENV
-* It is assumed your EC2 Instance(s) have these tag key : values (for SSM patching target);
+* It is assumed your EC2 Instance(s) have these tags - key : values (for SSM patching target);
     * Env : qa
     * Module : ECS
 * S3 bucket for terraform state files is a pre-requisite
 * S3 bucket for SSM log files is also created outside this plan, ahead of time
 
+### Making Life Easy
 to run SSM patch baseline and maintenance window setup in QA:
 ```bash
 cp maintest.txt main.tf
