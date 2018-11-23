@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "export PS1='\u@\H:\w$ '" >> ~/.bash_profile
