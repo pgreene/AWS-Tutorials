@@ -9,7 +9,7 @@
   tasks:
 
      - name: Copy and Execute the script 
-       script: ./sumo-remove.sh
+       script: ./scripts/sumo-remove.sh
 
  # Execute by running this cmd (Where -i is your host name:
  # ansible-playbook -i host-name, -e ansible_network_os=vyos sumo-remove.yml
