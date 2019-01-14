@@ -1,0 +1,16 @@
+---
+- name: Transfer and execute sumo-remove script
+  # Use host name from your ~/.ssh/config referenced in /etc/ansible/hosts
+  # README File with more info in ../scripts/README.md
+  # hosts: prod-ws-ecs
+  hosts: all
+  user: ec2-user
+
+  tasks:
+
+     - name: Copy and Execute the script 
+       script: /Users/paulgreene/Repos443/devops/vanguard/scripts/agent-installers/sumo-remove.sh
+
+ # Execute by running this cmd (Where -i is your host name:
+ # ansible-playbook -i prod-api-ecs, -e ansible_network_os=vyos sumo-remove.yml
+ # ansible-playbook -i prod-ws-ecs, -e ansible_network_os=vyos sumo-remove.yml
