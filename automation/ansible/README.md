@@ -1,3 +1,5 @@
+This example can be used to install a sumo collector on an EC2 Host
+
 ## Upload Sumo Collector and Install it:
 
 ```bash
