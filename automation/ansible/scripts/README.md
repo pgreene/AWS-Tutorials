@@ -15,3 +15,5 @@ cd /Your/Repos/ansible/
 ansible-playbook -i host-name, -e ansible_network_os=vyos sumo-install.yml
 </pre>
 
+* The **sumo-install.sh** script removes the bash variable file **sumo-vars.sh** from the EC2 Host so that your Sumo Access ID and Key are not sitting in plain text on the instance.
+* Storing your Sumo Access ID and Key in git is not recommended. Better to explore ansible combined with Vault. Not in this example's scope.
