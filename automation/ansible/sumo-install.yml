@@ -8,11 +8,10 @@
 
   tasks:
      - name: Transfer Vars Script
-       copy: src=/Users/paulgreene/Repos443/devops/vanguard/scripts/agent-installers/sumo-vars.sh dest=/home/ec2-user mode=0775
+       copy: src=./sumo-vars.sh dest=/home/ec2-user mode=0775
 
      - name: Copy and Execute the script 
-       script: /Users/paulgreene/Repos443/devops/vanguard/scripts/agent-installers/sumo-install.sh
+       script: ./sumo-install.sh
 
   # Execute by running this cmd (Where -i is your host name:
-  # ansible-playbook -i prod-api-ecs, -e ansible_network_os=vyos sumo-install.yml
-  # ansible-playbook -i prod-ws-ecs, -e ansible_network_os=vyos sumo-install.yml
+  # ansible-playbook -i host-name, -e ansible_network_os=vyos sumo-install.yml
