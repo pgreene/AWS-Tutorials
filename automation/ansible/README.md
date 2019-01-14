@@ -2,16 +2,14 @@
 
 ```bash
 # -i represents host names in your /etc/ansible/hosts which are referenced in your SSH config ~/.ssh/config
-ansible-playbook -i prod-api-ecs, -e ansible_network_os=vyos sumo-install.yml
-ansible-playbook -i prod-ws-ecs, -e ansible_network_os=vyos sumo-install.yml
+ansible-playbook -i host-name, -e ansible_network_os=vyos sumo-install.yml
 ```
 
 ## Remove Installed Sumo Collector:
 
 ```bash
 # -i represents host names in your /etc/ansible/hosts which are referenced in your SSH config ~/.ssh/config
-ansible-playbook -i prod-api-ecs, -e ansible_network_os=vyos sumo-remove.yml
-ansible-playbook -i prod-ws-ecs, -e ansible_network_os=vyos sumo-remove.yml
+ansible-playbook -i host-name, -e ansible_network_os=vyos sumo-remove.yml
 ```
 
 ## Pre-requisites
