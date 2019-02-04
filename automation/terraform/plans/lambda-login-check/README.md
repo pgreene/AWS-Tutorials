@@ -40,8 +40,7 @@ terraform {
 
 # Ensure latest python script with updates is zipped up for lambda
 # Example:  
-zip -r uat-dx-dbv1-logincheck.zip uat-dx-dbv1-logincheck.py
-zip -r prod-dx-dbv1-logincheck.zip prod-dx-dbv1-logincheck.py
+zip -r uat-YOUR-PROJECT-YOUR-SUB-COMPONENT-logincheck.zip uat-YOUR-PROJECT-YOUR-SUB-COMPONENT-logincheck.py
 ```
 
 
