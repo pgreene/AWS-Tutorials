@@ -33,6 +33,7 @@ terraform {
     bucket  = "YOUR-TERRAFORM-STATE-FILE-BKT" 
     key     = "deployment/login-check.tfstate"
     region  = "us-east-1"
+// if encrypted with kms key called terraform;
     kms_key_id = "alias/terraform"
     encrypt = true
   }
