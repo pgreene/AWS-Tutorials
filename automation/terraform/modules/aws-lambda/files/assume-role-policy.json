@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": [
+          "lambda.amazonaws.com",
+          "ec2.amazonaws.com",
+          "events.amazonaws.com"
+        ]
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
