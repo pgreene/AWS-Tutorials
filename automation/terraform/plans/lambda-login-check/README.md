@@ -1,6 +1,7 @@
 ## Usage
 Uses local AWS Config for provider - will need to update profile name to properly run it in main.tf
 
+Module used: <a href="https://github.com/pgreene/AWS-Tutorials/tree/master/automation/terraform/modules/aws-lambda">aws-lambda</a>
 
 ### Run lambda setup in UAT environment
 ```bash
