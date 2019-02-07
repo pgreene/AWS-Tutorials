@@ -1,0 +1,25 @@
+# --------------------------------------------------------- #
+# --- Name: generate-listattachedrolepolicies ------------- #
+# --- Author: pgreene ------------------------------------- #
+# --- Purpose: Generate script, listattachedrolepolicies -- #
+# --- Run listattachedrolepolicies to see all your AWS ---- #
+# --- IAM policies attached to existing roles ------------- #
+# --------------------------------------------------------- #
+
+## Save this file as an executable !!
+
+## declare an array variable
+declare -a rolenames=(`aws iam list-roles | grep -i rolename | awk '{print $2}' | sed s/\"//g | sed s/\,//g`)
+
+## now loop through the above array
+rm listattachedrolepolicies
+
+for i in "${rolenames[@]}"
+do
+   echo -e "echo \"$i\" \naws iam list-attached-role-policies --role-name $i" >> listattachedrolepolicies
+done
+
+chmod 0775 ./listattachedrolepolicies
+
+echo "listattachedrolepolicies created with executable permissions"
+echo "Now you can run ./listattachedrolepolicies"
