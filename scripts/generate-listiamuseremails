@@ -14,16 +14,13 @@
 ## Save this file as an executable !!
 
 ## declare an array variable
-## add aws --profile
-## in the command below if necessary
-
-declare -a amids=(`aws iam list-users | grep -i UserName | sort -u | sed s/\"//g | sed s/\,//g | sed s/"UserName: "//g | sed s/"            "//g`)
+declare -a emails=(`aws iam list-users | grep -i UserName | sort -u | sed s/\"//g | sed s/\,//g | sed s/"UserName: "//g | sed s/"            "//g`)
 
 ## Will remove previous listiamuseremails if it exists so you can run this generate script over and over
 rm listiamuseremails
 
 ## now loop through the above array
-for i in "${amids[@]}"
+for i in "${emails[@]}"
 do
    echo -e "aws iam list-user-tags --user-name $i | grep -i '@' | sed s/\\\"//g | sed s/\"Value: \"//g | sed s/\"            \"//g " >> listiamuseremails
 done
