@@ -1,0 +1,34 @@
+# -------------------------------------------------- #
+# --- For this to work IAM USER Accounts ----------- #
+# --- need an email tag on them -------------------- #
+# -------------------------------------------------- #
+
+# -------------------------------------------------- #
+# --- Name: generate-listiamuseremails ------------- #
+# --- Author: pgreene ------------------------------ #
+# --- Purpose: Generate script, listiamuseremails -- #
+# --- Run listiamuseremails to see all your AWS ---- #
+# --- IAM User Emails ------------------------------ #
+# -------------------------------------------------- #
+
+## Save this file as an executable !!
+
+## declare an array variable
+## add aws --profile
+## in the command below if necessary
+
+declare -a amids=(`aws iam list-users | grep -i UserName | sort -u | sed s/\"//g | sed s/\,//g | sed s/"UserName: "//g | sed s/"            "//g`)
+
+## Will remove previous listiamuseremails if it exists so you can run this generate script over and over
+rm listiamuseremails
+
+## now loop through the above array
+for i in "${amids[@]}"
+do
+   echo -e "aws iam list-user-tags --user-name $i | grep -i '@' | sed s/\\\"//g | sed s/\"Value: \"//g | sed s/\"            \"//g " >> listiamuseremails
+done
+
+chmod 0775 ./listiamuseremails
+
+echo "listiamuseremails created with executable permissions"
+echo "Now you can run ./listiamuseremails"
