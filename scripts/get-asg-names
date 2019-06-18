@@ -1,0 +1,29 @@
+#!/bin/bash
+# ------------------------------------------------------ #
+# --- Purpose: List AWS ASGs based on two tag values --- #
+# -----------  Interactive Bash Script ----------------- #
+# ------------------------------------------------------ #
+
+echo -n "Enter aws cli output (text json or table): "
+read OUTPUT
+
+echo -n "Enter aws profile: "
+read PROFILE
+
+echo -n "Enter aws region: "
+read REGION
+
+echo -n "Enter aws tag key1: "
+read TAGKEY1
+
+echo -n "Enter aws tag value1: "
+read TAGVALUE1
+
+echo -n "Enter aws tag key2: "
+read TAGKEY2
+
+echo -n "Enter aws tag value2: "
+read TAGVALUE2
+ 
+aws --output $OUTPUT --profile $PROFILE --region $REGION autoscaling describe-auto-scaling-groups --query "AutoScalingGroups[? Tags[? (Key=='$TAGKEY1') && Value=='$TAGVALUE1']] | [? Tags[? Key=='$TAGKEY2' && Value =='$TAGVALUE2']]".AutoScalingGroupName
+
