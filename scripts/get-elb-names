@@ -1,0 +1,18 @@
+#!/bin/bash
+# ------------------------------------------------------ #
+# --- Purpose: List AWS ELBs based on one tag value ---- #
+# -----------  Non-interactive Bash Script ------------- #
+# -----------  Gets ALL PROD ELB Names ----------------- #
+# ------------------------------------------------------ #
+
+OUTPUT="json"
+PROFILE="YOURAWSPROFILE"
+REGION="us-east-1"
+
+# --- update to use any tag key value pair you want ---- #
+TAGKEY1="Env"
+TAGVALUE1="prod"
+
+aws --output $OUTPUT --profile $PROFILE --region $REGION elbv2 describe-load-balancers \
+--query "LoadBalancers[].{ LoadBalancerName: LoadBalancerName, LoadBalancerArn: LoadBalancerArn}" \
+| grep -i "app/" | sed 's/        "LoadBalancerArn": //g' | sed 's/arn:aws:elasticloadbalancing:eu-west-1:749502138985:loadbalancer//g'
