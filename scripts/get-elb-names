@@ -14,5 +14,4 @@ TAGKEY1="Env"
 TAGVALUE1="prod"
 
 aws --output $OUTPUT --profile $PROFILE --region $REGION elbv2 describe-load-balancers \
---query "LoadBalancers[].{ LoadBalancerName: LoadBalancerName, LoadBalancerArn: LoadBalancerArn}" \
-| grep -i "app/" | sed 's/        "LoadBalancerArn": //g' | sed 's/arn:aws:elasticloadbalancing:eu-west-1:749502138985:loadbalancer//g'
+--query "LoadBalancers[].{ LoadBalancerName: LoadBalancerName, LoadBalancerArn: LoadBalancerArn}"
