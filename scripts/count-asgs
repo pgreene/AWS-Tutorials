@@ -1,0 +1,7 @@
+## ----------------------------------------------- ##
+## --- Purpose: Count ASGs in your AWS Account --- ##
+## --- Author: pgreene --------------------------- ##
+## ----------------------------------------------- ##
+
+aws --output text autoscaling describe-auto-scaling-groups \
+--query "AutoScalingGroups[].{ AutoScalingGroupName: AutoScalingGroupName }" | wc -l
